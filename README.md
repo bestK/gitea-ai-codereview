@@ -32,7 +32,7 @@ python main.py # 运行
 
 -   http://{server_host}:{server_port}/codereview
 
-![](./doc/hook.png)
+![](./doc/hook.jpg)
 
 # Tip
 
