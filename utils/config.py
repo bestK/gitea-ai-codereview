@@ -15,7 +15,7 @@ class Config:
         webhook.url = os.getenv("WEBHOOK_URL")
         webhook.header_name = os.getenv("WEBHOOK_HEADER_NAME")
         webhook.header_value = os.getenv("WEBHOOK_HEADER_VALUE")
-        webhook.reqeust_body = os.getenv("WEBHOOK_REQUEST_BODY")
+        webhook.request_body = os.getenv("WEBHOOK_REQUEST_BODY")
         self.webhook = webhook
 
 
@@ -24,8 +24,8 @@ class Webhook:
         self.url: str = None
         self.header_name: str = None
         self.header_value: str = None
-        self.reqeust_body: str = None
+        self.request_body: str = None
 
     @property
     def is_init(self) -> bool:
-        return self.url and self.reqeust_body
+        return self.url and self.request_body

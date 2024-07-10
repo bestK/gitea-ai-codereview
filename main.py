@@ -76,7 +76,7 @@ async def analyze_code(request_body: Dict):
                 content = (
                     f"Code Review: {title}\n{commit_url}\n\n审查结果: \n{issue_url}"
                 )
-                request_body_str = config.webhook.reqeust_body.format(
+                request_body_str = config.webhook.request_body.format(
                     content=content,
                     mention=full_name,
                 )
@@ -110,9 +110,9 @@ async def analyze_code(request_body: Dict):
 
 
 @app.post("/test")
-def test(reqeust_body: str):
+def test(request_body: str):
     logger.success("Test")
-    return {"message": copilot.code_review(reqeust_body)}
+    return {"message": copilot.code_review(request_body)}
 
 
 if __name__ == "__main__":

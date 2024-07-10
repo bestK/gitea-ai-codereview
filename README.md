@@ -22,7 +22,7 @@
 
 copy .env.example .env # 创建配置文件 获取 Gitea 仓库的 `access_token`， `host` 以及 Copilot `COPILOT_TOKEN` 配置到 `.env` 文件中。
 python -m venv .venv && ./venv/Scripts/activate # 创建虚拟环境并激活
-pip install -r requirements.txt , poetry install # 安装依赖，如果安装了 poetry 建议使用 poetry 命令
+pip install -r requirements.txt || poetry install # 安装依赖，如果安装了 poetry 建议使用 poetry 命令
 python main.py # 运行
 访问 http://127.0.0.1:3008/docs
 
