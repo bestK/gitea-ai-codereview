@@ -17,6 +17,15 @@ class Config:
         webhook.header_value = os.getenv("WEBHOOK_HEADER_VALUE")
         webhook.request_body = os.getenv("WEBHOOK_REQUEST_BODY")
         self.webhook = webhook
+        self._validate()
+
+    def _validate(self):
+        if not self.gitea_token:
+            raise ValueError("GITEA_TOKEN is required")
+        if not self.gitea_host:
+            raise ValueError("GITEA_HOST is required")
+        if not self.copilot_token:
+            raise ValueError("COPILOT_TOKEN is required")
 
 
 class Webhook:
